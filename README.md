@@ -1,154 +1,188 @@
 # crm_test
 Setting Up Git
 
-21
-print "Enter your height in centimeters: "
-height_cm = gets.chomp.to_f
-height_m = height_cm / 100
+10
+countries = ["USA", "Canada", "Mexico", "Germany", "France"]
+index = countries.index("Mexico")
 
-print "Your height in meters is #{height_m} m."
+puts "The index of 'Mexico' is #{index}."
+
+11
+family = ["John", "Alice", "Emma", "David"]
+last_name = family[-1]
+
+puts "The last name in the array is #{last_name}."
+
+12
+numbers = [3, 6, 9, 12, 15]
+reversed_numbers = numbers.reverse
+
+puts "The reversed array is #{reversed_numbers}."
+
+13
+animals = ["dog", "cat", "elephant", "giraffe", "lion"]
+animals[2] = "tiger"
+
+puts "The updated array of animals is #{animals}."
+
+14
+colors1 = ["red", "green", "blue"]
+colors2 = ["yellow", "purple", "pink"]
+combined_colors = colors1 + colors2
+
+puts "The combined array is #{combined_colors}."
+
+15
+items = ["apple", "banana", "cherry", "date", "fig"]
+items.each_with_index do |item, index|
+  puts "Item #{index}: #{item}"
+end
+
+16
+letters = ["a", "b", "c", "d", "e"]
+if letters.include?("f")
+  puts "f is found."
+else
+  puts "f is not found."
+end
+
+17
+random_numbers = [4, 7, 1, 9, 3]
+random_numbers.unshift(8, 2)
+
+puts "The updated array with two new numbers is #{random_numbers}."
+
+18
+numbers = [1, 2, 3, 4, 5, 3, 1]
+unique_numbers = numbers.uniq
+
+puts "The unique values are #{unique_numbers}."
+
+19
+book = { title: "koda", author: "mark", pages: 100 }
+
+puts "The book's title is '#{book[:title]}'."
+
+20
+fruit_prices = { apple: 2, banana: 1, cherry: 3 }
+fruit_prices[:orange] = 4
+
+puts "The updated fruit prices hash is #{fruit_prices}."
+
+21
+grades = { math: 90, english: 85, science: 88 }
+grades[:english] = 95
+
+puts "The updated grades hash is #{grades}."
 
 22
-divisor = 7
-quotient = 50 / divisor
-remainder = 50 % divisor
+shopping_cart = { shoes: 50, bag: 30, watch: 20 }
+shopping_cart.delete(:watch)
 
-print "50 divided by #{divisor} is #{quotient}, with a remainder of #{remainder}."
+puts "The updated shopping cart hash is #{shopping_cart}."
 
 23
-book_title = "The Great Gatsby"
-author = "F. Scott Fitzgerald"
+favorite_books = { 
+  first: { title: "Book One", author: "Author One" }, 
+  second: { title: "Book Two", author: "Author Two" }, 
+  third: { title: "Book Three", author: "Author Three" } 
+}
 
-print "The book titled '#{book_title}' was written by #{author}."
+puts "The author of the second book is '#{favorite_books[:second][:author]}'."
 
 24
-print "Enter a number: "
-number = gets.chomp.to_i
-square = number ** 2
+person = { name: "John", age: 25, city: "New York" }
+person[:job] = "developer"
 
-print "The square of #{number} is #{square}."
+puts "The updated hash is #{person}."
 
 25
-temperature_celsius = 25
-temperature_fahrenheit = (temperature_celsius * 9/5) + 32
+car = { maker: "Toyota", model: "Corolla", year: 2015 }
+car[:year] = 2020
 
-print "The temperature is #{temperature_celsius}°C, which is #{temperature_fahrenheit}°F."
+puts "The updated car details are #{car}."
 
 26
-string1 = "Angelica"
-string2 = "Gumanid"
-
-combined = string1[0, 3] + string2[-2, 2]
-
-print "The concatenated result is '#{combined}'."
+numbers_hash = { one: 1, two: 2, three: 3 }
+puts "The keys in the hash are #{numbers_hash.keys}."
 
 27
-price_item1 = 30.5
-price_item2 = 20.75
-total = price_item1 + price_item2
-
-print "The total is #{total}."
+colors_hash = { red: "#FF0000", green: "#00FF00", blue: "#0000FF" }
+puts "The values in the hash are #{colors_hash.values}."
 
 28
-print "Enter a word: "
-word = gets.chomp
-
-print "The length of the word is #{word.length}."
+favorite_movie = { title: "Inception", director: "Christopher Nolan", year: 2010, rating: 8.8 }
+puts "Favorite movie details: #{favorite_movie}."
 
 29
-print "Enter a sentence: "
-sentence = gets.chomp
+people = {
+  person1: { name: "Alice", age: 30 }, 
+  person2: { name: "Bob", age: 25 }
+}
 
-print "The sentence in uppercase is: #{sentence.upcase}"
+puts "The name of person 2 is #{people[:person2][:name]}."
 
 30
-print "Enter a word: "
-word = gets.chomp
+countries = {
+  usa: { capital: "Washington", population: 331 }, 
+  france: { capital: "Paris", population: 67 }
+}
 
-print "The first 5 characters are '#{word[0, 5]}'."
+puts "The capital of France is #{countries[:france][:capital]}."
 
 31
-print "Enter a word: "
-word = gets.chomp
+students = {
+  student1: { math: 85, english: 90 }, 
+  student2: { math: 78, english: 92 }
+}
 
-print "The word reversed is '#{word.reverse}'."
+puts "The English grade of the second student is #{students[:student2][:english]}."
 
 32
-print "Enter a number: "
-number = gets.chomp.to_i
-square = number ** 2
+cars = { 
+  car1: { make: "Toyota", model: "Corolla" }, 
+  car2: { make: "Ford", model: "Mustang" }
+}
 
-print "The square of the number is #{square}."
+puts "The model of car1 is #{cars[:car1][:model]}."
 
 33
-print "Enter your name: "
-name = gets.chomp
+teams = {
+  team_a: { player_1: "John", player_2: "Paul" }, 
+  team_b: { player_1: "Sarah", player_2: "Lucy" }
+}
 
-print "Your name capitalized is '#{name.capitalize}'."
+puts "The name of player2 in Team B is #{teams[:team_b][:player_2]}."
 
 34
-print "Enter a number: "
-number = gets.chomp.to_f
-square_root = Math.sqrt(number)
-
-print "The square root of the number is #{square_root}."
+numbers = { numbers: [10, 20, 30, 40] }
+puts "The second number in the array is #{numbers[:numbers][1]}."
 
 35
-sentence = "This Is A MIXED Case Sentence."
-lowercase_sentence = sentence.downcase
-
-print "The sentence in lowercase is: '#{lowercase_sentence}'."
+fruits = { red: ["apple", "cherry"], yellow: ["banana", "lemon"] }
+puts "The second red fruit is #{fruits[:red][1]}."
 
 36
-sum = 12 + 8
+stores = {
+  store_1: { products: ["apples", "oranges"] }, 
+  store_2: { products: ["bananas", "grapes"] }
+}
 
-print "The sum of 12 and 8 is #{sum}."
+puts "The second product from Store 2 is #{stores[:store_2][:products][1]}."
 
 37
-result = 45 - 20
+students = Array.new(10) { |i| { name: "Student#{i+1}", age: 20, grade: "A" } }
 
-print "45 minus 20 is #{result}."
+puts "The name of the 10th student is #{students[9][:name]}."
 
 38
-product = 7 * 9
+array = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  ['-', 0]
+]
 
-print "7 multiplied by 9 is #{product}."
+birthday = "#{array[2][1]}#{array[3][0]}#{array[0][0]}#{array[1][2]}-#{array[1][1]}#{array[1][2]}-#{array[0][1]}#{array[2][2]}"
 
-39
-quotient = 100 / 5
-
-print "100 divided by 5 is #{quotient}."
-
-40
-remainder = 29 % 4
-
-print "The remainder of 29 divided by 4 is #{remainder}."
-
-41
-result = 3 ** 4
-
-print "3 raised to the power of 4 is #{result}."
-
-42
-number = 50
-number += 30
-
-print "The new value after adding 30 is #{number}."
-
-43
-number = 100
-number -= 25
-
-print "The new value after subtracting 25 is #{number}."
-
-44
-number = 8
-number *= 5
-
-print "The new value after multiplying by 5 is #{number}."
-
-45
-number = 64
-number /= 8
-
-print "The new value after dividing by 8 is #{number}."
+puts "Your birthday is #{birthday}."
