@@ -1,6 +1,14 @@
 # crm_test
 Setting Up Git
 
+1
+fruits = ["apple", "banana", "cherry", "date"]
+fruits.push("orange") # Corrected: Adding "orange" to the list
+
+puts "Updated list of array of Fruits: #{fruits}"
+
+
+
 10
 countries = ["USA", "Canada", "Mexico", "Germany", "France"]
 index = countries.index("Mexico")
