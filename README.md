@@ -797,3 +797,612 @@ end
 puts "Total: #{total}"
 
 
+
+
+
+
+
+
+
+# Existing array of people
+people = [
+  { national_id: 'ID001', name: 'Alice Johnson', age: 28 },
+  { national_id: 'ID002', name: 'Bob Smith', age: 34 },
+  { national_id: 'ID003', name: 'Charlie Brown', age: 25 },
+  { national_id: 'ID004', name: 'David Wilson', age: 40 },
+  { national_id: 'ID005', name: 'Eve Davis', age: 22 },
+  { national_id: 'ID006', name: 'Frank Miller', age: 30 },
+  { national_id: 'ID007', name: 'Grace Lee', age: 27 },
+  { national_id: 'ID008', name: 'Hank Green', age: 31 },
+  { national_id: 'ID009', name: 'Ivy Hall', age: 29 },
+  { national_id: 'ID010', name: 'Jack White', age: 35 },
+  { national_id: 'ID011', name: 'Kara Black', age: 23 },
+  { national_id: 'ID012', name: 'Liam Young', age: 26 },
+  { national_id: 'ID013', name: 'Mia Adams', age: 21 },
+  { national_id: 'ID014', name: 'Nate Robinson', age: 38 },
+  { national_id: 'ID015', name: 'Olivia King', age: 32 },
+  { national_id: 'ID016', name: 'Paul Baker', age: 45 },
+  { national_id: 'ID017', name: 'Quinn Perez', age: 24 },
+  { national_id: 'ID018', name: 'Ruby Turner', age: 33 },
+  { national_id: 'ID019', name: 'Sam Harris', age: 37 },
+  { national_id: 'ID020', name: 'Tina Lewis', age: 29 }
+]
+
+# Function to add a new user
+def add_user(people)
+  puts "Enter National ID:"
+  new_national_id = gets.chomp
+
+  # Check if the national_id is unique
+  if people.any? { |person| person[:national_id] == new_national_id }
+    puts "Failed to add: National ID already exists."
+  else
+    # Prompt for name and age
+    puts "Enter Name:"
+    new_name = gets.chomp
+
+    puts "Enter Age:"
+    new_age = gets.chomp.to_i
+
+    # Prepend the new person to the beginning of the list
+    people.unshift({ national_id: new_national_id, name: new_name, age: new_age })
+
+    # Success message
+    puts "User added successfully!"
+  end
+
+  # Display the updated list of people
+  display_people(people)
+end
+
+# Function to delete a user
+def delete_user(people)
+  puts "Enter National ID to delete:"
+  del_national_id = gets.chomp
+
+  # Find the index of the person with the given national_id
+  index = people.find_index { |person| person[:national_id] == del_national_id }
+
+  # Check if the national_id was found
+  if index.nil?
+    puts "User not found."
+  else
+    # Delete the user and print a success message
+    people.delete_at(index)
+    puts "Successfully deleted."
+  end
+
+  # Display the updated list of people
+  display_people(people)
+end
+
+# Function to display the entire list of people
+def display_people(people)
+  puts "Updated list of people:"
+  people.each { |person| puts person }
+end
+
+# Function to display the first 20 users
+def display_first_20_users(people)
+  puts "First 20 users:"
+  people.first(20).each { |person| puts person }
+end
+
+# Function to display the last 20 users
+def display_last_20_users(people)
+  puts "Last 20 users:"
+  people.last(20).each { |person| puts person }
+end
+
+# Main program loop
+loop do
+  puts "Choose an action: add_user, delete_user, display_first_20, display_last_20, or exit"
+  action = gets.chomp
+
+  case action
+  when "add_user"
+    add_user(people)
+  when "delete_user"
+    delete_user(people)
+  when "display_first_20"
+    display_first_20_users(people)
+  when "display_last_20"
+    display_last_20_users(people)
+  when "exit"
+    puts "Exiting the program."
+    break
+  else
+    puts "Invalid action. Please try again."
+  end
+end
+
+
+
+afafgagagag
+
+
+
+# Existing array of people
+people = [
+  { national_id: 'ID001', name: 'Alice Johnson', age: 28 },
+  { national_id: 'ID002', name: 'Bob Smith', age: 34 },
+  { national_id: 'ID003', name: 'Charlie Brown', age: 25 },
+  { national_id: 'ID004', name: 'David Wilson', age: 40 },
+  { national_id: 'ID005', name: 'Eve Davis', age: 22 },
+  { national_id: 'ID006', name: 'Frank Miller', age: 30 },
+  { national_id: 'ID007', name: 'Grace Lee', age: 27 },
+  { national_id: 'ID008', name: 'Hank Green', age: 31 },
+  { national_id: 'ID009', name: 'Ivy Hall', age: 29 },
+  { national_id: 'ID010', name: 'Jack White', age: 35 },
+  { national_id: 'ID011', name: 'Kara Black', age: 23 },
+  { national_id: 'ID012', name: 'Liam Young', age: 26 },
+  { national_id: 'ID013', name: 'Mia Adams', age: 21 },
+  { national_id: 'ID014', name: 'Nate Robinson', age: 38 },
+  { national_id: 'ID015', name: 'Olivia King', age: 32 },
+  { national_id: 'ID016', name: 'Paul Baker', age: 45 },
+  { national_id: 'ID017', name: 'Quinn Perez', age: 24 },
+  { national_id: 'ID018', name: 'Ruby Turner', age: 33 },
+  { national_id: 'ID019', name: 'Sam Harris', age: 37 },
+  { national_id: 'ID020', name: 'Tina Lewis', age: 29 }
+]
+
+# Function to add a new user
+def add_user(people)
+  puts "Enter National ID:"
+  new_national_id = gets.chomp
+
+  # Check if the national_id is unique
+  if people.any? { |person| person[:national_id] == new_national_id }
+    puts "Failed to add: National ID already exists."
+  else
+    # Prompt for name and age
+    puts "Enter Name:"
+    new_name = gets.chomp
+
+    puts "Enter Age:"
+    new_age = gets.chomp.to_i
+
+    # Prepend the new person to the beginning of the list
+    people.unshift({ national_id: new_national_id, name: new_name, age: new_age })
+
+    # Success message
+    puts "User added successfully!"
+  end
+
+  # Display the updated list of people
+  display_people(people)
+end
+
+# Function to delete a user
+def delete_user(people)
+  puts "Enter National ID to delete:"
+  del_national_id = gets.chomp
+
+  # Find the index of the person with the given national_id
+  index = people.find_index { |person| person[:national_id] == del_national_id }
+
+  # Check if the national_id was found
+  if index.nil?
+    puts "User not found."
+  else
+    # Delete the user and print a success message
+    people.delete_at(index)
+    puts "Successfully deleted."
+  end
+
+  # Display the updated list of people
+  display_people(people)
+end
+
+# Function to search for a user by national_id or name
+def search_user(people)
+  puts "Enter National ID or Name to search:"
+  query = gets.chomp.downcase
+
+  # Find the user by national_id or name
+  user = people.find do |person|
+    person[:national_id].downcase == query || person[:name].downcase == query
+  end
+
+  # Display the user details if found, otherwise print "User not found"
+  if user
+    puts "User found: #{user}"
+  else
+    puts "User not found."
+  end
+end
+
+# Function to display the entire list of people
+def display_people(people)
+  puts "Updated list of people:"
+  people.each { |person| puts person }
+end
+
+# Function to display the first 20 users
+def display_first_20_users(people)
+  puts "First 20 users:"
+  people.first(20).each { |person| puts person }
+end
+
+# Function to display the last 20 users
+def display_last_20_users(people)
+  puts "Last 20 users:"
+  people.last(20).each { |person| puts person }
+end
+
+# Main program loop
+loop do
+  puts "Choose an action: add_user, delete_user, search_user, display_first_20, display_last_20, or exit"
+  action = gets.chomp
+
+  case action
+  when "add_user"
+    add_user(people)
+  when "delete_user"
+    delete_user(people)
+  when "search_user"
+    search_user(people)
+  when "display_first_20"
+    display_first_20_users(people)
+  when "display_last_20"
+    display_last_20_users(people)
+  when "exit"
+    puts "Exiting the program."
+    break
+  else
+    puts "Invalid action. Please try again."
+  end
+end
+
+
+
+
+
+afsafagag
+
+
+# Existing array of people
+people = [
+  { national_id: 'ID001', name: 'Alice Johnson', age: 28 },
+  { national_id: 'ID002', name: 'Bob Smith', age: 34 },
+  { national_id: 'ID003', name: 'Charlie Brown', age: 25 },
+  { national_id: 'ID004', name: 'David Wilson', age: 40 },
+  { national_id: 'ID005', name: 'Eve Davis', age: 22 },
+  { national_id: 'ID006', name: 'Frank Miller', age: 30 },
+  { national_id: 'ID007', name: 'Grace Lee', age: 27 },
+  { national_id: 'ID008', name: 'Hank Green', age: 31 },
+  { national_id: 'ID009', name: 'Ivy Hall', age: 29 },
+  { national_id: 'ID010', name: 'Jack White', age: 35 },
+  { national_id: 'ID011', name: 'Kara Black', age: 23 },
+  { national_id: 'ID012', name: 'Liam Young', age: 26 },
+  { national_id: 'ID013', name: 'Mia Adams', age: 21 },
+  { national_id: 'ID014', name: 'Nate Robinson', age: 38 },
+  { national_id: 'ID015', name: 'Olivia King', age: 32 },
+  { national_id: 'ID016', name: 'Paul Baker', age: 45 },
+  { national_id: 'ID017', name: 'Quinn Perez', age: 24 },
+  { national_id: 'ID018', name: 'Ruby Turner', age: 33 },
+  { national_id: 'ID019', name: 'Sam Harris', age: 37 },
+  { national_id: 'ID020', name: 'Tina Lewis', age: 29 }
+]
+
+# Function to add a new user
+def add_user(people)
+  puts "Enter National ID:"
+  new_national_id = gets.chomp
+
+  # Check if the national_id is unique
+  if people.any? { |person| person[:national_id] == new_national_id }
+    puts "Failed to add: National ID already exists."
+  else
+    # Prompt for name and age
+    puts "Enter Name:"
+    new_name = gets.chomp
+
+    puts "Enter Age:"
+    new_age = gets.chomp.to_i
+
+    # Prepend the new person to the beginning of the list
+    people.unshift({ national_id: new_national_id, name: new_name, age: new_age })
+
+    # Success message
+    puts "User added successfully!"
+  end
+
+  # Display the updated list of people
+  display_people(people)
+end
+
+# Function to delete a user
+def delete_user(people)
+  puts "Enter National ID to delete:"
+  del_national_id = gets.chomp
+
+  # Find the index of the person with the given national_id
+  index = people.find_index { |person| person[:national_id] == del_national_id }
+
+  # Check if the national_id was found
+  if index.nil?
+    puts "User not found."
+  else
+    # Delete the user and print a success message
+    people.delete_at(index)
+    puts "Successfully deleted."
+  end
+
+  # Display the updated list of people
+  display_people(people)
+end
+
+# Function to search for a user by national_id or name
+def search_user(people)
+  puts "Enter National ID or Name to search:"
+  query = gets.chomp.downcase
+
+  # Find the user by national_id or name
+  user = people.find do |person|
+    person[:national_id].downcase == query || person[:name].downcase == query
+  end
+
+  # Display the user details if found, otherwise print "User not found"
+  if user
+    puts "User found: #{user}"
+  else
+    puts "User not found."
+  end
+end
+
+# Function to edit a user's details by national_id
+def edit_user(people)
+  puts "Enter National ID of the user to edit:"
+  edit_national_id = gets.chomp
+
+  # Find the user by national_id
+  user = people.find { |person| person[:national_id] == edit_national_id }
+
+  # If the user is found, allow editing of the name and age
+  if user
+    puts "Editing user: #{user}"
+    puts "Enter new name (or press Enter to keep '#{user[:name]}'):"
+    new_name = gets.chomp
+    puts "Enter new age (or press Enter to keep '#{user[:age]}'):"
+    new_age = gets.chomp
+
+    # Update name if a new one is provided
+    user[:name] = new_name unless new_name.empty?
+
+    # Update age if a new one is provided and is a valid integer
+    user[:age] = new_age.to_i unless new_age.empty?
+
+    puts "User updated successfully: #{user}"
+  else
+    puts "User not found."
+  end
+
+  # Display the updated list of people
+  display_people(people)
+end
+
+# Function to display the entire list of people
+def display_people(people)
+  puts "Updated list of people:"
+  people.each { |person| puts person }
+end
+
+# Function to display the first 20 users
+def display_first_20_users(people)
+  puts "First 20 users:"
+  people.first(20).each { |person| puts person }
+end
+
+# Function to display the last 20 users
+def display_last_20_users(people)
+  puts "Last 20 users:"
+  people.last(20).each { |person| puts person }
+end
+
+# Main program loop
+loop do
+  puts "Choose an action: add_user, delete_user, search_user, edit_user, display_first_20, display_last_20, or exit"
+  action = gets.chomp
+
+  case action
+  when "add_user"
+    add_user(people)
+  when "delete_user"
+    delete_user(people)
+  when "search_user"
+    search_user(people)
+  when "edit_user"
+    edit_user(people)
+  when "display_first_20"
+    display_first_20_users(people)
+  when "display_last_20"
+    display_last_20_users(people)
+  when "exit"
+    puts "Exiting the program."
+    break
+  else
+    puts "Invalid action. Please try again."
+  end
+end
+
+
+
+
+
+
+sfafafaf
+
+
+# Existing array of people
+people = [
+  { national_id: 'ID001', name: 'Alice Johnson', age: 28 },
+  { national_id: 'ID002', name: 'Bob Smith', age: 34 },
+  { national_id: 'ID003', name: 'Charlie Brown', age: 25 },
+  { national_id: 'ID004', name: 'David Wilson', age: 40 },
+  { national_id: 'ID005', name: 'Eve Davis', age: 22 },
+  { national_id: 'ID006', name: 'Frank Miller', age: 30 },
+  { national_id: 'ID007', name: 'Grace Lee', age: 27 },
+  { national_id: 'ID008', name: 'Hank Green', age: 31 },
+  { national_id: 'ID009', name: 'Ivy Hall', age: 29 },
+  { national_id: 'ID010', name: 'Jack White', age: 35 },
+  { national_id: 'ID011', name: 'Kara Black', age: 23 },
+  { national_id: 'ID012', name: 'Liam Young', age: 26 },
+  { national_id: 'ID013', name: 'Mia Adams', age: 21 },
+  { national_id: 'ID014', name: 'Nate Robinson', age: 38 },
+  { national_id: 'ID015', name: 'Olivia King', age: 32 },
+  { national_id: 'ID016', name: 'Paul Baker', age: 45 },
+  { national_id: 'ID017', name: 'Quinn Perez', age: 24 },
+  { national_id: 'ID018', name: 'Ruby Turner', age: 33 },
+  { national_id: 'ID019', name: 'Sam Harris', age: 37 },
+  { national_id: 'ID020', name: 'Tina Lewis', age: 29 }
+]
+
+# Function to add a new user
+def add_user(people)
+  puts "Enter National ID:"
+  new_national_id = gets.chomp
+
+  # Check if the national_id is unique
+  if people.any? { |person| person[:national_id] == new_national_id }
+    puts "Failed to add: National ID already exists."
+  else
+    # Prompt for name and age
+    puts "Enter Name:"
+    new_name = gets.chomp
+
+    puts "Enter Age:"
+    new_age = gets.chomp.to_i
+
+    # Prepend the new person to the beginning of the list
+    people.unshift({ national_id: new_national_id, name: new_name, age: new_age })
+
+    # Success message
+    puts "User added successfully!"
+  end
+
+  # Display the updated list of people
+  display_people(people)
+end
+
+# Function to delete a user
+def delete_user(people)
+  puts "Enter National ID to delete:"
+  del_national_id = gets.chomp
+
+  # Find the index of the person with the given national_id
+  index = people.find_index { |person| person[:national_id] == del_national_id }
+
+  # Check if the national_id was found
+  if index.nil?
+    puts "User not found."
+  else
+    # Delete the user and print a success message
+    people.delete_at(index)
+    puts "Successfully deleted."
+  end
+
+  # Display the updated list of people
+  display_people(people)
+end
+
+# Function to search for a user by national_id or name
+def search_user(people)
+  puts "Enter National ID or Name to search:"
+  query = gets.chomp.downcase
+
+  # Find the user by national_id or name
+  user = people.find do |person|
+    person[:national_id].downcase == query || person[:name].downcase == query
+  end
+
+  # Display the user details if found, otherwise print "User not found"
+  if user
+    puts "User found: #{user}"
+  else
+    puts "User not found."
+  end
+end
+
+# Function to edit a user's details by national_id
+def edit_user(people)
+  puts "Enter National ID of the user to edit:"
+  edit_national_id = gets.chomp
+
+  # Find the user by national_id
+  user = people.find { |person| person[:national_id] == edit_national_id }
+
+  # If the user is found, allow editing of the name and age
+  if user
+    puts "Editing user: #{user}"
+    puts "Enter new name (or press Enter to keep '#{user[:name]}'):"
+    new_name = gets.chomp
+    puts "Enter new age (or press Enter to keep '#{user[:age]}'):"
+    new_age = gets.chomp
+
+    # Update name if a new one is provided
+    user[:name] = new_name unless new_name.empty?
+
+    # Update age if a new one is provided and is a valid integer
+    user[:age] = new_age.to_i unless new_age.empty?
+
+    puts "User updated successfully: #{user}"
+  else
+    puts "User not found."
+  end
+
+  # Display the updated list of people
+  display_people(people)
+end
+
+# Function to display the entire list of people
+def display_people(people)
+  puts "Updated list of people:"
+  people.each { |person| puts person }
+end
+
+# Function to display the first 20 users
+def display_first_20_users(people)
+  puts "First 20 users:"
+  people.first(20).each { |person| puts person }
+end
+
+# Function to display the last 20 users
+def display_last_20_users(people)
+  puts "Last 20 users:"
+  people.last(20).each { |person| puts person }
+end
+
+# Main program loop
+loop do
+  puts "Choose an action: add_user, delete_user, search_user, edit_user, display_first_20, display_last_20, or exit"
+  action = gets.chomp
+
+  case action
+  when "add_user"
+    add_user(people)
+  when "delete_user"
+    delete_user(people)
+  when "search_user"
+    search_user(people)
+  when "edit_user"
+    edit_user(people)
+  when "display_first_20"
+    display_first_20_users(people)
+  when "display_last_20"
+    display_last_20_users(people)
+  when "exit"
+    # Add confirmation before exiting
+    puts "Are you sure you want to exit (y/n)?"
+    confirm = gets.chomp.downcase
+    if confirm == 'y'
+      puts "Exiting the program."
+      break
+    else
+      puts "Continuing the program."
+    end
+  else
+    puts "Invalid action. Please try again."
+  end
+end
+
